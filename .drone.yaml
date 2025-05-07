@@ -25,6 +25,9 @@ steps:
     settings:
       dockerfile: /app/build/Dockerfile
     commands: # 定义在Docker容器中执行的shell命令
+      - echo ${DRONE_BRANCH}
+      - pwd
+      - ls
       - cd /app/build
       - chmod +x run.sh
       - sh run.sh
