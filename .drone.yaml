@@ -21,7 +21,7 @@ steps:
       - name: go-build
         path: /app/build # 将应用打包好的可执行文件挂载出来
       - name: docker
-        path: /var/run/docker.sock # 挂载宿主机的docker
+        path: /var/run/docker.sock:rw # 挂载宿主机的docker
     settings:
       dockerfile: /app/build/Dockerfile
     commands: # 定义在Docker容器中执行的shell命令
